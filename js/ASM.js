@@ -97,7 +97,7 @@ app.controller("myctrl", function ($scope, $http, $rootScope, $routeParams) {
     console.log($rootScope.Cart)
   }
   //dọc dữ liệu
-  $http.get("data.json").then(function (reponse) {
+  $http.get("Data.json").then(function (reponse) {
     $scope.products = reponse.data;
     //Khúc này là chuyển từ id để lấy sản phẩm 
     $scope.detailPro = $scope.products.find(item => item.id == $routeParams.id);
