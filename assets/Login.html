@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-6 img-login">
+            <img src="img/Dangnhap1.jpg" width="700px" height="550px" alt="" class=" rounded"
+                style="margin-top: 80px; margin-left: -50px;">
+        </div>
+        <div class="col-6 dangnhap">
+            <form style="margin-left: 40px;" class="was-validated">
+                <h3 class="fw-normal mt-3 fs-1 text-center fw-bold">Đăng nhập</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email:</label>
+                        <input type="email" id="loginEmail" ng-model="info.email" class="form-control fs-4"
+                            placeholder="Nhập email" required>
+                        <div class="invalid-feedback">
+                            Nhập email
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Mật khẩu:</label>
+                        <input type="password" id="loginPassword" ng-model="info.password" class="form-control fs-4"
+                            placeholder="Nhập mật khẩu" required>
+                        <div class="invalid-feedback">
+                            Nhập mật khẩu
+                        </div>
+                    </div>
+                    <button type="submit" ng-click="login()" class="btn btn-primary btn-login">Đăng nhập</button>
+                    <div class="d-flex align-items-center py-3 mb-3">
+                        <hr class="w-100">
+                        <div class="px-3">Or</div>
+                        <hr class="w-100">
+                    </div>
+                    <div class="btn-login1 btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-3" role="group" aria-label="First group" style="width: 80px;">
+                            <button type="button" class="btn btn-primary"><i class="bi bi-facebook"></i></button>
+                        </div>
+                        <div class="btn-group me-3" role="group" aria-label="Second group" style="width: 80px;">
+                            <button type="button" class="btn btn-light border-secondary"><i
+                                    class="bi bi-google"></i></button>
+                        </div>
+                        <div class="btn-group me-3" role="group" aria-label="Third group" style="width: 80px;">
+                            <button type="button" class="btn btn-dark"><i class="bi bi-apple"></i></button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Four group" style="width: 80px;">
+                            <button type="button" class="btn btn-success"><i class="bi bi-xbox"></i></button>
+                        </div>
+                    </div>
+                    <a class="btn-login2 link-info" href="#!Res">Tạo tài khoản
+                    </a>
+                </form>
+            </form>
+        </div>
+    </div>
+</div>

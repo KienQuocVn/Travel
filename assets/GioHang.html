@@ -1,0 +1,226 @@
+<div class="container py-5 h-100">
+  <div class="card card-registration card-registration-2"">
+    <div class=" row ">
+      <div class=" col">
+    <div class="p-5">
+      <div class="titlegiohang mb-5">
+        <h1 class=" fw-bold text-black">GIỎ HÀNG CỦA BẠN</h1>
+      </div>
+      <table class="table ">
+        <thead>
+          <tr>
+            <th scope="col">Du lịch</th>
+            <th scope="col">Đơn giá</th>
+            <th scope="col">Số lượng</th>
+            <th scope="col">Thành tiền</th>
+            <th scope="col">Xóa</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="sp in Cart">
+            <td>
+              <img src="{{sp.image}}" class="imggiohang rounded"> {{sp.name | uppercase}}
+            </td>
+            <td>{{sp.sale | number}} VNĐ</td>
+            <td><input min="1" type="number" ng-model="sp.quantity" class="form-control"></td>
+            <td>{{sp.sale * sp.quantity | number}} VNĐ</td>
+            <td><button class="btn" ng-click="xoa($index)"> X </button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div ng-hide="Cart.length > 0" style="margin-left: 450px; margin-top: 100px;">
+        <h2>Giỏ hàng của bạn trống</h2>
+      </div>
+      <div class="fw-bold" style="margin-top: 200px;">
+        <a href="#!home"><i class="bi bi-arrow-left"></i> Quay lại trang chủ</a>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<div class="container pay-product ">
+  <h3 class="text-uppercase ">Chi tiết giỏ hàng</h3>
+  <div class="pay-form">
+    <h4>Thông tin liên hệ</h4>
+    <p class="payform-note">
+      Thông tin có dấu <span class="text-danger">(*)</span> là bắt buộc phải
+      nhập. Xin quý khách vui lòng kiểm tra kỹ thông tin <strong>email, điện thoại</strong> để tránh bị sai
+      sót.
+    </p>
+    <div class="payform__info">
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="name-str" style="width: 150px;">Quý danh<span class="text-danger">(*)</span></label>
+        <select name="Gender" id="name-str" class=" form-select">
+          <option value="">Chọn quý danh</option>
+          <option value="Mr">Ông</option>
+          <option value="Miss/Mrs">Bà</option>
+        </select>
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="name" style="width: 150px;">Họ và tên<span class="text-danger">(*)</span></label>
+        <input type="text" id="name" name="FullName" placeholder="Vui lòng nhập họ tên" class="form-control">
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="Country" style="width: 150px;">Quốc gia</label>
+        <select id="Country" name="Country" class="form-select">
+          <option value="">Lựa chọn quốc gia</option>
+          <option value="VietNam">Việt Nam</option>
+          <option value="Argentina">Argentina</option>
+          <option value="Armenia">Armenia</option>
+          <option value="Australia">Australia</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Croatia">Croatia</option>
+          <option value="France">France</option>
+          <option value="Germany">Germany</option>
+          <option value="Greenland">Greenland</option>
+          <option value="Hong Kong">Hong Kong</option>
+          <option value="Iceland">Iceland</option>
+          <option value="India">India</option>
+          <option value="Indonesia">Indonesia</option>
+          <option value="Malaysia">Malaysia</option>
+          <option value="Philippines">Philippines</option>
+          <option value="Pitcairn">Pitcairn</option>
+          <option value="Portugal">Portugal</option>
+          <option value="Russia">Russia</option>
+          <option value="Thailand">Thailand</option>
+          <option value="Turkey">Turkey</option>
+        </select>
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="city" style="width: 150px;">Thành phố</label>
+        <select name="City" id="city" class="form-select">
+          <option value="">Chọn thành phố</option>
+          <option value="Hà Nội">Hà Nội</option>
+          <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+          <option value="Hải Phòng">Hải Phòng</option>
+          <option value="Đà Nẵng">Đà Nẵng</option>
+          <option value="Hà Giang">Hà Giang</option>
+          <option value="Vĩnh Long">Vĩnh Long</option>
+          <option value="Tiền Giang">Tiền Giang</option>
+          <option value="Long An">Long An</option>
+          <option value="Nha Trang">Nha Trang</option>
+          <option value="Đồng Tháp">Đồng Tháp</option>
+        </select>
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="address" style="width: 150px;">Địa chỉ</label>
+        <input type="text" name="Address" placeholder="Vui lòng nhập địa chỉ của bạn" class="form-control" id="address">
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="phone-number" style="width: 150px;">Số điện thoại<span class="text-danger">(*)</span></label>
+        <input type="text" name="Tel" placeholder="Vui lòng nhập số điện thoại" class="form-control" id="phone-number">
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="phone" style="width: 150px;">Email<span class="text-danger">(*)</span></label>
+        <input type="email" name="Email" placeholder="Vui lòng nhập email" class="form-control" id="email">
+      </div>
+      <div class="form-check-inline mb-3 d-flex">
+        <label for="re-content" style="width: 150px;">Nội dung yêu cầu</label>
+        <textarea class="form-control" id="exampleTextarea" rows="3"
+          placeholder="Vui lòng nhập yêu cầu của bạn"></textarea>
+      </div>
+      <button class="btn ">Cập nhật</button>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 payment-methods ">
+
+        <h3 class="payform-head">PHƯƠNG THỨC THANH TOÁN</h3>
+        <div class="payment-methods__detail">
+          <label class="form__radio">
+            <span class="fs-5"> Thanh toán bằng chuyển khoản ngân hàng</span>
+            <input type="radio" name="MethodPayment" id="bank-pay" value="0" checked>
+          </label>
+          <div class="bankpay-box">
+            <p class="payform-note">
+              Quý khách có thể nộp tiền mặt trực tiếp tại các phòng giao dịch ngân hàng,
+              chuyển khoản qua cây ATM hoặc chuyển khoản qua internet banking, bank plus.
+            </p>
+            <div class="example-content rounded">
+              <p class="text-uppercase ms-4"><strong>MẪU NỘI DUNG CHUYỂN KHOẢN:</strong></p>
+              <p class="text-uppercase ms-4">"NGUYEN VAN A, nội dung chuyển khoản"</p>
+              <p class="text-uppercase ms-4">Ví dụ : </p>
+              <p class="text-uppercase ms-4">"NGUYEN VAN A, TT TIEN PHONG KHACH SAN"</p>
+              <p class="text-uppercase ms-4">"NGUYEN VAN A, TT Cau Giay Hotel"</p>
+            </div>
+            <p class="payform-note">Tài khoản ngân hàng của KQ-TOURS:</p>
+            <ul class="nav nav-banks">
+              <li class="nav-bank__item">
+                <a class="nav-link active" data-toggle="pill" href="#home">
+                  <img src="img/logo-mb.png" alt="">
+                </a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content tab-bank__content">
+              <div class="tab-pane tab-bank__pane  active" id="home">
+                <p>Ngân hàng TMCP Quân Đội - CN HỒ CHÍ MINH</p>
+                <p>STK : 0919925302</p>
+                <p>CTK : Công ty KQ-TOURS</p>
+              </div>
+            </div>
+          </div>
+          <div class="row fs-5 mb-4">
+            <label class="col-12">
+              <span class="mt-4 "> Thanh toán tại nhà
+                <input type="radio" name="TypePayment" value="0" id="payfull">
+              </span>
+            </label>
+            <label class="form__radio">
+              <span class="col-12">Thanh toán trực tiếp tại KQ-TOURS
+                <span class=" price-percent" data-format="currency"></span>
+                <input type="radio" name="TypePayment" value="1" id="paypercent">
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 payments">
+        <div class="col border rounded mt-2">
+          <div class="p-5">
+            <h3 class="fw-bold mb-5 mt-2 pt-1">THANH TOÁN</h3>
+            <hr class="my-4">
+            <h5 class="text-uppercase mb-3">Mã giảm giá</h5>
+            <div class="mb-5">
+              <div class="form-outline">
+                <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Examplea2">Nhập mã giảm giá</label>
+              </div>
+            </div>
+            <hr class="my-4">
+            <div class=" mb-5">
+              <h5 class="text-uppercase">TỔNG CỘNG</h5>
+              <h5>{{total() | number}} VNĐ</h5>
+            </div>
+            <p class="note-final">
+              * Khi Quý khách nhấn nút "Hoàn thành đặt tour" cũng đồng nghĩa là Quý khách đã đồng ý với các
+              <span class="">điều khoản và điều kiện</span> về đặt dịch vụ trên website của KQ-TOURS.
+            </p>
+            <button type="button" class="btn btn-dark btn-block btn-lg" data-bs-toggle="modal"
+              data-bs-target="#exampleModal1">
+              THANH TOÁN
+            </button>
+            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Xác nhận thanh toán</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    Bạn có chắc muốn thanh toán?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="button" class="btn btn-primary">Thanh toán</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

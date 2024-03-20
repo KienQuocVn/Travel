@@ -1,0 +1,426 @@
+<div class="container mt-5">
+  <div class="row ">
+    <div class="col-md-9 col-lg-9 col-sm-12">
+      <div class="text mb-3">
+        <div class="text-ToursTN rounded ">
+          <div class="row  ">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#!home">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Tours trong nước</li>
+              </ol>
+            </nav>
+            <div class="col-10">
+              <h2 class="TOURS fw-bold "><a href="">TOURS QUỐC TẾ</a></h2>
+            </div>
+            <div class="boloc col-2 ">
+              <select class="form-select" aria-label="Default select example" ng-model="sortColumn">
+                <option value="name">Ký tự A-Z</option>
+                <option value="-name">Ký tự Z-A</option>
+                <option value="sale">Giá tăng dần</option>
+                <option value="-sale">Giá giảm dần</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-4 mt-4"
+          ng-repeat="sp in products | filter: keySearch | limitTo: 6 : 20 | orderBy : sortColumn  ">
+          <div class="card">
+            <img src="{{sp.image}}" class="card-img-top">
+            <div class="onsale ">
+              <span class="badge bg-danger">Giá sốc</span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-success"> {{sp.name}}</h5>
+              <h6 class="card-title text-danger"> Sale: {{sp.sale | number}} VNĐ</h6>
+              <h6 class="card-title text-decoration-line-through"> Giá: {{sp.price | number}} VNĐ</h6>
+              <p class="card-text"><i class="bi bi-stopwatch"></i> Lịch trình:{{sp.duration}}</p>
+              <p class="card-text"><i class="bi bi-car-front"></i> {{sp.transport}}</p>
+              <p class="card-text"><i class="bi bi-calendar-check"></i> {{sp.start}}</p>
+              <p class="card-text"><i class="bi bi-house-check"></i> Khách sạn: <i
+                  class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i
+                  class="bi bi-star-fill text-warning"></i><i class="bi bi-star-fill text-warning"></i><i
+                  class="bi bi-star-fill text-warning"></i></p>
+              <a href="#!ChiTiet/{{sp.id}}" class="btn btn-primary">Xem thêm</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="boloc2 col-md-3 col-lg-3 col-sm-12">
+      <!--  -->
+      <ul class=" nav nav-pills mt-3 mb-3 justify-content-center" id="pills-tab" role="tablist"
+        style="margin-left: -100px; ">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark active" id="pills-home-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><i
+              class="bi bi-view-stacked"></i> Thể loại</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link text-dark" id="pills-profile-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+            aria-selected="false"><i class="bi bi-sliders"></i> Bộ lọc</button>
+        </li>
+      </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active mb-5" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+          tabindex="0">
+          <div class="row " style="border-bottom: 1px solid gray;">
+            <div class="col-6">
+              <a><i class="bi bi-flower3 fs-1 "></i> Mùa Xuân</a>
+            </div>
+            <div class="col-6">
+              <a href=""><i class="bi bi-wind fs-1"></i> Mùa Hạ</a>
+            </div>
+            <div class="col-6 mt-3">
+              <a href=""><i class='bx bxs-car fs-1'></i> Mùa Thu</a>
+            </div>
+            <div class="col-6 mt-3">
+              <a href=""><i class="bi bi-thermometer-snow fs-1"></i> Mùa Đông</a>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href=""><i class='bx bxs-plane-alt fs-1'></i> Vé Máy Bay</a>
+            </div>
+            <div class="col-6">
+              <a href=""><i class='bx bxs-ship fs-1'></i> Vé Thuyền</a>
+            </div>
+            <div class="col-6 mt-3">
+              <a href=""><i class='bx bxs-car fs-1'></i> Vé Xe</a>
+            </div>
+            <div class="col-6 mt-3">
+              <a href=""><i class='bx bxs-train fs-1'></i> Vé Tàu Hỏa</a>
+            </div>
+          </div>
+          <div class="mt-4">
+            <p>Địa điểm</p>
+            <div class="form-check-inline  d-flex">
+              <select id="Country" name="Country" class="form-select">
+                <option value="">Lựa chọn quốc gia</option>
+                <option value="Argentina">Argentina</option>
+                <option value="Armenia">Armenia</option>
+                <option value="Australia">Australia</option>
+                <option value="Brazil">Brazil</option>
+                <option value="Croatia">Croatia</option>
+                <option value="France">France</option>
+                <option value="Germany">Germany</option>
+                <option value="Greenland">Greenland</option>
+                <option value="Hong Kong">Hong Kong</option>
+                <option value="Iceland">Iceland</option>
+                <option value="India">India</option>
+                <option value="Indonesia">Indonesia</option>
+                <option value="Malaysia">Malaysia</option>
+                <option value="Philippines">Philippines</option>
+                <option value="Pitcairn">Pitcairn</option>
+                <option value="Portugal">Portugal</option>
+                <option value="Russia">Russia</option>
+                <option value="Thailand">Thailand</option>
+                <option value="Turkey">Turkey</option>
+              </select>
+            </div>
+            <div class="form-check-inline mt-3 d-flex">
+              <select name="City" id="city" class="form-select">
+                <option value="">Chọn thành phố</option>
+                <option value="Hà Nội">Hà Nội</option>
+                <option value="Hồ Chí Minh">Hồ Chí Minh</option>
+                <option value="Hải Phòng">Hải Phòng</option>
+                <option value="Đà Nẵng">Đà Nẵng</option>
+                <option value="Hà Giang">Hà Giang</option>
+                <option value="Vĩnh Long">Vĩnh Long</option>
+                <option value="Tiền Giang">Tiền Giang</option>
+                <option value="Long An">Long An</option>
+                <option value="Nha Trang">Nha Trang</option>
+                <option value="Đồng Tháp">Đồng Tháp</option>
+              </select>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p>Loại</p>
+            <div class="form-check-inline d-flex">
+              <select name="City" id="city" class="form-select">
+                <option value="">Loại</option>
+                <option value="Chỗ ở">Chỗ ở</option>
+                <option value="Thể dục & thể thao">Thể dục & thể thao</option>
+                <option value="Đồ ăn & nước uống">Đồ ăn & nước uống</option>
+                <option value="Cuộc sống về đêm">Cuộc sống về đêm</option>
+                <option value="Mua sắm">Mua sắm</option>
+                <option value="Lịch sử">Lịch sử</option>
+                <option value="Mỹ thuật">Mỹ thuật</option>
+                <option value="Sắc đẹp">Sắc đẹp</option>
+                <option value="Dịch vụ">Dịch vụ</option>
+                <option value="Giải trí">Giải trí</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+
+          <!--  -->
+          <div class="mt-3">
+            <p>Thể loại khác</p>
+            <div class="simplebar-mask">
+              <div class="simplebar-offset">
+                <div class="simplebar-content-wrapper">
+                  <div class="simplebar-content">
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-0" class="form-check-input" value="Khách Sạn">
+                      <label title="" for="subcat-0" class="form-check-label">
+                        <span class="fs-sm">Khách Sạn</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-1" class="form-check-input" value="Nhà trọ">
+                      <label title="" for="subcat-1" class="form-check-label">
+                        <span class="fs-sm">Nhà trọ</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-2" class="form-check-input" value="Nhà nghỉ">
+                      <label title="" for="subcat-2" class="form-check-label">
+                        <span class="fs-sm">Nhà nghỉ</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-4" class="form-check-input" value="Căn hộ">
+                      <label title="" for="subcat-4" class="form-check-label">
+                        <span class="fs-sm">Căn hộ</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-5" class="form-check-input" value="Khách sạn nhỏ">
+                      <label title="" for="subcat-5" class="form-check-label">
+                        <span class="fs-sm">Khách sạn nhỏ</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-6" class="form-check-input" value="Phòng">
+                      <label title="" for="subcat-6" class="form-check-label">
+                        <span class="fs-sm">Phòng</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-7" class="form-check-input" value="Gym">
+                      <label title="" for="subcat-7" class="form-check-label">
+                        <span class="fs-sm">Gym</span>
+                      </label>
+                    </div>
+                    <div class="form-check"><input type="checkbox" id="subcat-8" class="form-check-input"
+                        value="Hồ bơi">
+                      <label title="" for="subcat-8" class="form-check-label">
+                        <span class="fs-sm">Hồ bơi</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-9" class="form-check-input" value="Bãi đậu xe">
+                      <label title="" for="subcat-9" class="form-check-label">
+                        <span class="fs-sm">Bãi đậu xe</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <div class="pb-4 mb-2">
+              <h3 class="h6">Đánh giá trung bình</h3>
+              <div class="form-check"><input type="checkbox" id="stars-0" class="form-check-input" value="5 stars">
+                <label title="" for="stars-0" class="form-check-label">
+                  <span class="star-rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                  </span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="stars-1" class="form-check-input" value="4 stars">
+                <label title="" for="stars-1" class="form-check-label">
+                  <span class="star-rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                  </span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="stars-2" class="form-check-input" value="3 stars">
+                <label title="" for="stars-2" class="form-check-label">
+                  <span class="star-rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                  </span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="stars-3" class="form-check-input" value="2 stars"><label title=""
+                  for="stars-3" class="form-check-label">
+                  <span class="star-rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-half text-warning"></i>
+                  </span>
+                </label>
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="stars-4" class="form-check-input" value="1 stars">
+                <label title="" for="stars-4" class="form-check-label">
+                  <span class="star-rating">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <i class="bi bi-star-fill text-warning"></i>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p>Tiện nghi</p>
+            <div class="simplebar-mask">
+              <div class="simplebar-offset">
+                <div class="simplebar-content-wrapper">
+                  <div class="simplebar-content">
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-0" class="form-check-input" value="Bãi đậu xe">
+                      <label title="" for="subcat-0" class="form-check-label">
+                        <span class="fs-sm">Bãi đậu xe</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-1" class="form-check-input" value="Nhà hàng">
+                      <label title="" for="subcat-1" class="form-check-label">
+                        <span class="fs-sm">Nhà hàng</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-2" class="form-check-input" value="Dịch vụ phòng">
+                      <label title="" for="subcat-2" class="form-check-label">
+                        <span class="fs-sm">Dịch vụ phòng</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-4" class="form-check-input" value="Trung tâm thể dục">
+                      <label title="" for="subcat-4" class="form-check-label">
+                        <span class="fs-sm">Trung tâm thể dục</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-5" class="form-check-input" value="Khách sạn nhỏ">
+                      <label title="" for="subcat-5" class="form-check-label">
+                        <span class="fs-sm">Khách sạn nhỏ</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-6" class="form-check-input" value="Wifi miễn phí">
+                      <label title="" for="subcat-6" class="form-check-label">
+                        <span class="fs-sm">Wifi miễn phí</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-7" class="form-check-input" value="Spa">
+                      <label title="" for="subcat-7" class="form-check-label">
+                        <span class="fs-sm">Spa</span>
+                      </label>
+                    </div>
+                    <div class="form-check"><input type="checkbox" id="subcat-8" class="form-check-input"
+                        value="Quán Bar">
+                      <label title="" for="subcat-8" class="form-check-label">
+                        <span class="fs-sm">Quán Bar</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-9" class="form-check-input" value="Hồ bơi">
+                      <label title="" for="subcat-9" class="form-check-label">
+                        <span class="fs-sm">Hồ bơi</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3">
+            <p>Tiện nghi phòng</p>
+            <div class="simplebar-mask">
+              <div class="simplebar-offset">
+                <div class="simplebar-content-wrapper">
+                  <div class="simplebar-content">
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-0" class="form-check-input" value="Điều hòa">
+                      <label title="" for="subcat-0" class="form-check-label">
+                        <span class="fs-sm">Điều hòa</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-1" class="form-check-input" value="Bàn làm việc">
+                      <label title="" for="subcat-1" class="form-check-label">
+                        <span class="fs-sm">Bàn làm việc</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-2" class="form-check-input" value="Sân thượng">
+                      <label title="" for="subcat-2" class="form-check-label">
+                        <span class="fs-sm">Sân thượng</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-4" class="form-check-input" value="Máy giặc">
+                      <label title="" for="subcat-4" class="form-check-label">
+                        <span class="fs-sm">Máy giặc</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-5" class="form-check-input" value="Lò sưởi">
+                      <label title="" for="subcat-5" class="form-check-label">
+                        <span class="fs-sm">Lò sưởi</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-6" class="form-check-input" value="Giặc ủi">
+                      <label title="" for="subcat-6" class="form-check-label">
+                        <span class="fs-sm">Giặc ủi</span>
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input type="checkbox" id="subcat-7" class="form-check-input" value="hòng bếp">
+                      <label title="" for="subcat-7" class="form-check-label">
+                        <span class="fs-sm">Phòng bếp</span>
+                      </label>
+                    </div>
+                    <div class="form-check"><input type="checkbox" id="subcat-8" class="form-check-input"
+                        value="Nhà tắm riêng">
+                      <label title="" for="subcat-8" class="form-check-label">
+                        <span class="fs-sm">Nhà tắm riêng</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <nav class="mt-4" aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item"><a class="page-link" href="">Previous</a></li>
+      <li class="page-item"><a class="page-link" href="">1</a></li>
+      <li class="page-item"><a class="page-link" href="">2</a></li>
+      <li class="page-item"><a class="page-link" href="">3</a></li>
+      <li class="page-item"><a class="page-link" href="">4</a></li>
+      <li class="page-item"><a class="page-link" href="">Next</a></li>
+    </ul>
+  </nav>
+</div>

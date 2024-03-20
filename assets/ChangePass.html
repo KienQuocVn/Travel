@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row">
+        <div class="col-6 img-login">
+            <img src="img/Dangnhap1.jpg" width="750px" height="550px" alt="" class="rounded"
+                style="margin-top: 120px; margin-left: -100px;">
+        </div>
+        <div class="col-6 rounded changpass">
+            <form class="was-validated">
+                <h3 class="fw-normal mt-3 fs-1 text-center fw-bold">Đổi mật khẩu</h3>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label fs-4">Tài khoản:</label>
+                    <input type="email" id="confirmPassword" ng-model="info.email" class="form-control fs-4" required
+                        placeholder="Tài khoản">
+                    <div class="invalid-feedback">
+                        Nhập tài khoản
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="oldPassword" class="form-label fs-4">Mật khẩu cũ:</label>
+                    <input type="password" id="oldPassword" ng-model="info.password" class="form-control fs-4" required
+                        placeholder="Nhập mật khẩu cũ">
+                    <div class="invalid-feedback">
+                        Nhập mật khẩu cũ
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="newPassword" class="form-label fs-4">Mật khẩu mới:</label>
+                    <input type="password" id="newPassword" ng-model="info.newpassword" class="form-control fs-4"
+                        required placeholder="Nhập mật khẩu mới">
+                    <div class="invalid-feedback">
+                        Nhập mật khẩu mới
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmNewPassword" class="form-label fs-4">Xác nhận mật khẩu mới:</label>
+                    <input type="password" id="confirmNewPassword" ng-model="info.confirmNewPassword"
+                        class="form-control fs-4" required placeholder="Xác nhận mật khẩu mới">
+                    <div class="invalid-feedback">
+                        Xác nhận mật khẩu mới
+                    </div>
+                </div>
+                <button type="submit" ng-click="changpass()" class="btn btn-primary btn-changpass">Đổi mật khẩu</button>
+                <div class="d-flex align-items-center py-3 mb-3">
+                    <hr class="w-100">
+                    <div class="px-3">Or</div>
+                    <hr class="w-100">
+                </div>
+                <div class="btn-changpass1 btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-3" role="group" aria-label="First group" style="width: 80px;">
+                        <button type="button" class="btn btn-primary"><i class="bi bi-facebook"></i></button>
+                    </div>
+                    <div class="btn-group me-3" role="group" aria-label="Second group" style="width: 80px;">
+                        <button type="button" class="btn btn-light border-secondary"><i
+                                class="bi bi-google"></i></button>
+                    </div>
+                    <div class="btn-group me-3" role="group" aria-label="Third group" style="width: 80px;">
+                        <button type="button" class="btn btn-dark"><i class="bi bi-apple"></i></button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Four group" style="width: 80px;">
+                        <button type="button" class="btn btn-success"><i class="bi bi-xbox"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

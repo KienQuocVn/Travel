@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row mb-5">
+        <div class="col-6 img-login">
+            <img src="img/Dangnhap1.jpg" width="700px" height="550px" alt="" class="rounded"
+                style="margin-top: 80px; margin-left: -50px;">
+        </div>
+        <div class="col-6 dangnhap">
+            <form style="margin-left: 40px;" class="was-validated">
+                <h3 class="fw-normal mt-3 fs-1 text-center fw-bold">Đăng ký</h3>
+                <form name="registrationForm" novalidate>
+                    <div class="form-group">
+                        <label for="name" class="fs-4">Họ tên:</label>
+                        <input type="text" class="form-control fs-4" id="name" ng-model="info.name" required>
+                        <div class="invalid-feedback">
+                            Nhập họ tên
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="fs-4">Số điện thoại:</label>
+                        <input type="text" class="form-control fs-4" id="phone" ng-model="info.phone" required>
+                        <div class="invalid-feedback">
+                            Nhập số điện thoại
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="fs-4">Email:</label>
+                        <input type="email" class="form-control fs-4" id="email" ng-model="info.email" required>
+                        <div class="invalid-feedback">
+                            Nhập Email
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="fs-4">Mật khẩu:</label>
+                        <input type="password" class="form-control fs-4" id="password" ng-model="info.password"
+                            required>
+                        <div class="invalid-feedback">
+                            Nhập mật khẩu
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="fs-4">Xác nhận mật khẩu:</label>
+                        <input type="password" class="form-control fs-4" id="confirmPassword"
+                            ng-model="info.confirmPassword" required>
+                        <div class="invalid-feedback">
+                            Nhập xác nhận mật khẩu
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4 btn-login" ng-click="reg()">Đăng ký</button>
+                    <div class="d-flex align-items-center py-3 mb-3">
+                        <hr class="w-100">
+                        <div class="px-3">Or</div>
+                        <hr class="w-100">
+                    </div>
+                </form>
+
+                <div class="btn-toolbar mb-3 btn-res" role="toolbar" aria-label="Toolbar with button groups">
+                    <div class="btn-group me-3" role="group" aria-label="First group" style="width: 80px;">
+                        <button type="button" class="btn btn-primary"><i class="bi bi-facebook"></i></button>
+                    </div>
+                    <div class="btn-group me-3" role="group" aria-label="Second group" style="width: 80px;">
+                        <button type="button" class="btn btn-light border-secondary"><i
+                                class="bi bi-google"></i></button>
+                    </div>
+                    <div class="btn-group me-3" role="group" aria-label="Third group" style="width: 80px;">
+                        <button type="button" class="btn btn-dark"><i class="bi bi-apple"></i></button>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="Four group" style="width: 80px;">
+                        <button type="button" class="btn btn-success"><i class="bi bi-xbox"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

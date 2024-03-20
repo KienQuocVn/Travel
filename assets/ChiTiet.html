@@ -1,0 +1,554 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#!home">Trang chủ</a></li>
+            <li class="breadcrumb-item">
+                <a ng-hide="{{detailPro.kind}} === 'trong nước'" href="#!TN">Tours {{detailPro.kind}}</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{detailPro.name}}</li>
+        </ol>
+    </nav>
+    <div class="row">
+        <div class="col-12">
+            <div class="card p-0 pb-0"">
+                <div class=" card-body d-flex justify-content-between flex-wrap">
+                <img class="img_chitiet rounded" src="{{detailPro.image}}" alt="">
+                <div class="title-chitiet">
+                    <div class="badge text-bg-dark"><i class="bi bi-airplane"></i> Phương tiện</div>
+                    <div class="badge text-bg-dark"><i class="bi bi-currency-dollar"></i> Thanh toán</div>
+                    <div class="badge text-bg-dark"><i class="bi bi-house"></i> 4.5</div>
+                    <h1 class="h3 mt-2 mb-1"> {{detailPro.name}}</h1>
+                    <h2 class="card-title text-danger"> {{detailPro.sale | number}} VNĐ</h2>
+                    <p class="card-text"><i class="bi bi-stopwatch"></i> Lịch trình:{{detailPro.duration}}</p>
+                    <p class="card-text"><i class="bi bi-car-front"></i> {{detailPro.transport}}</p>
+                    <p class="card-text"><i class="bi bi-calendar-check"></i> {{detailPro.start}}</p>
+                </div>
+                <ul class="list-inline mb-0">
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-sm btn-white px-2">
+                            <i class="bi bi-heart"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <a href="#" class="btn btn-sm btn-white px-2" role="button" id="dropdownShare"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-share"></i>
+                        </a>
+                        <ul class="dropdown-menu min-w-auto shadow rounded" aria-labelledby="dropdownShare">
+                            <li>
+                                <a class="dropdown-item" href="#"> <i class="bi bi-twitter"></i>Twitter</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="bi bi-facebook"></i>Facebook</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="bi bi-linkedin"></i>LinkedIn</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#"><i class="bi bi-copy"></i>Copy link</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#" class="btn btn-sm btn-white px-2">
+                            <i class="bi bi-exclamation-triangle"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-footer bg-transparent border-top py-0">
+                <ul class="nav nav-tabs nav-bottom-line nav-responsive border-0" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link mb-0 active" data-bs-toggle="tab" href="#tab-1" aria-selected="true"
+                            role="tab">Chi tiết</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-2" aria-selected="false" role="tab"
+                            tabindex="-1">Lịch trình & Điều Khoản</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link mb-0" data-bs-toggle="tab" href="#tab-3" aria-selected="false" role="tab"
+                            tabindex="-1">Đánh giá và bình luận</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<section class="pt-3">
+    <div class="container">
+        <div class="tab-content mb-0" id="tour-pills-tabContent">
+            <div class="tab-pane fade active show" id="tab-1" role="tabpanel" aria-labelledby="tab-1">
+                <div class="row g-4 g-lg-5">
+                    <div class="col-lg-7 col-xl-8">
+                        <div class="card bg-transparent mb-4">
+                            <div class="card-header bg-transparent border-bottom px-3 pt-2">
+                                <h4 class="mb-0">Giới thiệu</h4>
+                            </div>
+                            <div class="card-body px-0 pb-0">
+                                <h6 class="mb-3 ms-2">
+                                    Tour Hội An 2 ngày 1 đêm tại KQ-Tours sẽ đưa bạn đi khám phá những
+                                    địa điểm du lịch nổi tiếng, tìm hiểu về văn hóa lịch sử và tham gia nhiều trò
+                                    chơi thú vị tại Hội An. Chỉ với 2.090K bạn sẽ có một chuyến du lịch Hội An trọn
+                                    vẹn. Cùng tìm hiểu nhé!</h6>
+                                <div class="mb-0">
+                                    <h2 class="ms-1" style="color: #0a77a9;">1. Giới thiệu về tour Hội An 2 ngày 1
+                                        đêm</h2>
+                                    <p class="ms-3">
+                                        Hội An là thành phố trực thuộc tỉnh Quảng Nam, nơi đây có di sản văn hóa thế
+                                        giới được UNESCO công nhận đó chính là phố cổ. Hội An mang vẻ đẹp cổ kính,
+                                        bình
+                                        dị cùng con người mộc mạc, hiếu khách. Chính vì thế rất nhiều du khách trong
+                                        và
+                                        ngoài nước yêu thích Hội An, muốn được đến Hội An tham quan.
+                                    </p>
+                                    <p class="mt-2 ms-3">
+                                        KQ-Tours cung cấp tour du lịch Hội An ngắn ngày với các thông tin như sau:
+                                    </p>
+                                    <ul>
+                                        <li>Hành trình : Hội An – Phố cổ Hội An – Rừng dừa Bảy Mẫu – Các làng
+                                            nghề truyền thống</li>
+                                        <li>Thời gian : 2 ngày 1 đêm</li>
+                                        <li>Điểm xuất phát/Kết thúc : Hội An</li>
+                                        <li>Phương tiện : Ô tô</li>
+                                    </ul>
+                                    <h2 class="ms-1" style="color: #0a77a9;">2. Điểm nổi bật của tour du lịch Hội An
+                                        2 ngày 1 đêm</h2>
+                                    <ul>
+                                        <li>
+                                            Khám phá phố cổ Hội An với những ngôi nhà cổ hơn 200 năm tuổi và tìm
+                                            hiểu về nét đẹp văn hóa của nơi này
+                                        </li>
+                                        <li>
+                                            Tham quan và trải nghiệm ngồi thuyền thúng vui chơi tại rừng dừa Bảy Mẫu
+                                        </li>
+                                        <li>
+                                            Ghé thăm 2 ngôi làng nghề truyền thống nổi tiếng tại Hội An là Làng Gốm
+                                            Thanh Hà và Làng rau Trà Quế
+                                        </li>
+                                        <li>
+                                            Thưởng thức các món đặc sản của Hội An Quảng Nam
+                                        </li>
+                                        <li>
+                                            Có hướng dẫn viên luôn luôn hỗ trợ trong suốt hành trình tour 2 ngày 1
+                                            đêm.
+                                        </li>
+                                    </ul>
+                                    <h2 class=" ms-1" style="color: #0a77a9;">3. Giá tour đi Hội An 2N1Đ tại
+                                        KQ-Tours </h2>
+                                    <p class="mt-2 ms-3">
+                                        Bảng giá chi phí tour du lịch Hội An 2N1Đ từ KQ-Tours
+                                    </p>
+                                    <table class="table table-chitiet ">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">Đối tượng</th>
+                                                <th scope="col">Giá</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th>Người lớn</th>
+                                                <td>2.090.000 vnđ</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trẻ em từ 6 đến 10 tuổi</th>
+                                                <td>1.567.000 vnđ
+                                                    (Tính bằng 75% giá tour người lớn)</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Trẻ em dưới 6 tuổi</th>
+                                                <td>Miễn phí</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card bg-transparent mb-3">
+                            <div class="card-header bg-transparent border-bottom px-0">
+                                <h4 class="ms-3 mt-2">Ảnh liên quan</h4>
+                            </div>
+                            <div class="card-body px-0 pb-0">
+                                <div class="row g-4">
+                                    <div class="col-md-4" ng-repeat="sp in products | limitTo: 6:page">
+                                        <a class="w-100 h-100" data-glightbox="" data-gallery="gallery"
+                                            href="{{sp.image}}" previewlistener="true">
+                                            <div class="card card-element-hover card-overlay-hover overflow-hidden">
+                                                <img src="{{sp.image}}" class="card-img" alt="">
+                                                <div class="hover-element w-100 h-100">
+                                                    <i
+                                                        class="bi bi-fullscreen fs-6 text-white position-absolute top-50 start-50 translate-middle bg-dark rounded-1 p-2 lh-1"></i>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-xl-4">
+                        <div class="card shadow mb-3">
+                            <a class="btn btn-primary" ng-click="addSP(detailPro)">Đặt Ngay</a>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header border-bottom">
+                                <h5 class="mb-0">Địa chỉ</h5>
+                            </div>
+                            <div class="card-body">
+                                <!-- <iframe
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d122778.37554327372!2d108.33467130010466!3d15.918276471715254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31420dd4e1353a7b%3A0xae336435edfcca3!2zVHAuIEjhu5lpIEFuLCBRdeG6o25nIE5hbSwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1706246288162!5m2!1svi!2s"
+                                    width="350" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+                                <ul class="list-group list-group-borderless my-3">
+                                    <h2>LIÊN HỆ TƯ VẤN</h2>
+                                    <li class="list-group-item">
+                                        <a href="#" class="h6 mb-0">
+                                            <i class="bi fa-fw bi-telephone-forward me-2"></i> Hotline : 1900 0208
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="h6 mb-0">
+                                            <i class="bi fa-fw bi-telephone-forward me-2"></i> Tel : 0919 925 302
+                                        </a>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <a href="#" class="h6 mb-0">
+                                            <i class="bi fa-fw bi-envelope me-2"></i>kieukienquocvn@gmail.com
+                                        </a>
+                                    </li>
+                                </ul>
+                                <ul class="list-inline mb-0 mt-3">
+                                    <li class="list-inline-item">Theo dõi chúng tôi : </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm px-2 bg-facebook mb-0" href="#">
+                                            <i class="bi bi-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm shadow px-2 bg-instagram mb-0" href="#">
+                                            <i class="bi bi-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm shadow px-2 bg-twitter mb-0" href="#">
+                                            <i class="bi bi-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <a class="btn btn-sm shadow px-2 bg-linkedin mb-0" href="#">
+                                            <i class="bi bi-linkedin"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card shadow">
+                            <div class="card-header border-bottom">
+                                <h5 class="mb-0">Liên quan</h5>
+                            </div>
+                            <div class="card-body d-flex">
+                                <img src="img/TN-1.jpg" style="width: 200px;" class="card-img-top">
+                                <div class="ms-2">
+                                    <h6 class="card-title ">Tour Hội An 3 ngày 2 đêm từ Hà Nội giá Sốc.</h6>
+                                    <i class="bi bi-clock"></i>3 ngày 2 đêm
+                                    <p class="text-warning fw-bold">3.090.000 VNĐ</p>
+                                </div>
+                            </div>
+                            <div class="card-body d-flex">
+                                <img src="img/TN-2.jpg" style="width: 200px;" class="card-img-top">
+                                <div class="ms-2">
+                                    <h6 class="card-title ">Combo du lịch Đà Nẵng - Hội An giá rẻ.</h6>
+                                    <i class="bi bi-clock"></i>4 ngày 3 đêm
+                                    <p class="text-warning fw-bold">2.790.000 VNĐ</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="tab-2">
+                <div class="row g-4">
+                    <div class="col-lg-8">
+                        <div class="card bg-transparent mb-4">
+                            <div class="card-header bg-transparent border-bottom px-3 pt-2">
+                                <h4 class="mb-0">Lịch trình</h4>
+                            </div>
+                            <div class="card-body px-0 pb-0">
+                                <div class="mb-0">
+                                    <h2 class="ms-1">Ngày 1: Phố cổ Hội An - Rừng dừa Bảy Mẫu</h2>
+                                    <p class="ms-3 text-success">
+                                        ( Du khách từ các tỉnh khác đến Hội An tự tục di chuyển hoặc liên hệ đến
+                                        KQ-TOURS để được hỗ trợ đặt vé xe, vé máy bay. )
+                                    </p>
+                                    <h4 class="ms-2" style="color: #0a77a9;">Sáng: Tham quan rừng dừa Bảy Mẫu</h4>
+                                    <p class="mt-2 ms-3">
+                                        Buổi sáng, xe ô tô đón đoàn cùng hướng dẫn viên từ địa điểm đã hẹn di chuyển
+                                        đến rừng dừa Bảy Mẫu Hội An để tham quan và khám phá. Khi đến đây, hướng dẫn
+                                        viên mua vé tham quan và ngồi thuyền vui chơi.
+                                        <br>
+                                        Khi được lên thuyền, đoàn sẽ được đi dọc theo dòng nước, hai bên là những
+                                        hàng dừa xanh tỏa bóng mát. Ngoài ra, khi ngồi thuyền bạn cũng có thể thử
+                                        sức trò quay thuyền cảm giác mạnh.
+                                    </p>
+                                    <h4 class="ms-2" style="color: #0a77a9;">Trưa: Ăn trưa, nhận phòng khách sạn
+                                    </h4>
+                                    <p class="mt-2 ms-3">
+                                        Đoàn tham quan rừng dừa xong thì lên xe quay về trung tâm để ăn trưa. Bữa
+                                        trưa bao gồm nhiều món đặc sản ngon.
+                                        <br>
+                                        Ăn xong, đoàn về khách sạn để nhận phòng và nghỉ ngơi.
+                                    </p>
+                                    <h4 class="ms-2" style="color: #0a77a9;"> Chiều: Khám phá phố cổ Hội An</h4>
+                                    <p class="mt-2 ms-3">
+                                        Đến khoảng 3h chiều, đoàn di chuyển đến tham quan phố cổ Hội An. Mọi người
+                                        lần lượt ghé thăm những ngôi nhà cổ, chùa miếu nổi tiếng tại đây như: Chùa
+                                        Cầu, nhà cổ Phùng Hưng, nhà cổ Quan Thắng, nhà cổ Tân Ký, bảo tàng lịch sử
+                                        văn hóa Hội An, bảo tàng văn hóa Sa Huỳnh,….
+                                        <br>
+                                        Tối, đoàn thưởng thức bữa tối ngay tại phố cổ. Ăn tối xong mọi người tự do
+                                        khám phá, vui chơi tại phố cổ.
+                                        <br>
+                                        Nếu bạn muốn được thưởng thức màn biểu dưỡng “Ký Ức Hội An” nổi tiếng hãy
+                                        mua vé và đi xem.
+                                    </p>
+                                    <h4 class="ms-2" style="color: #0a77a9;"> 22h00: Đoàn quay về khách sạn để nghỉ
+                                        ngơi</h4>
+                                </div>
+                                <div class="mb-0">
+                                    <h2 class="ms-1">Ngày 2: Tham quan Làng gốm Thanh Hà, làng rau Trà Quế</h2>
+                                    <h4 class="ms-2" style="color: #0a77a9;">Sáng: Tham quan 2 làng nghề truyền
+                                        thống ở Hội An
+                                    </h4>
+                                    <p class="mt-2 ms-3">
+                                        Đoàn ăn sáng tại khách sạn, sau đó lên xe đến tham quan Làng Gốm Thanh Hà
+                                        cùng Làng rau Trà Quế. Hai địa điểm này chỉ cách nhau 5 – 6km nên di chuyển
+                                        nhanh chóng.
+                                    </p>
+                                    <ul>
+                                        <li>Làng gốm Thanh Hà: Nơi lưu giữ và phát triển làng nghề truyền thống của
+                                            Hội An với số tuổi gần 500 tuổi. Đến đây, bạn sẽ được tìm hiểu về quy
+                                            trình làm gốm, tìm mua những món quà lưu niệm hay thử sức tự làm đồ gốm
+                                            cho mình.</li>
+                                        <li>Làng rau Trà Quế: Khám phá ngôi làng trồng rau lâu năm tại Hội An, trải
+                                            nghiệm trở thành người nông dân và thưởng thức các loại rau tươi sạch
+                                            trực tiếp.</li>
+                                    </ul>
+                                    <h4 class="ms-2" style="color: #0a77a9;">Trưa: Trả phòng khách sạn, ăn trưa</h4>
+                                    <p class="mt-2 ms-3">
+                                        Đoàn quay về khách sạn thu dọn hành lý và trả phòng. Sau đó đến nhà hàng để
+                                        ăn trưa. Ăn trưa xong thì kết thúc hành trình tour du lịch Hội An 2 ngày 1
+                                        đêm cùng KQ-TOURS!
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card bg-transparent mb-4">
+                            <div class="card-header bg-transparent border-bottom px-3 pt-2">
+                                <h4 class="mb-0">Điều khoản</h4>
+                            </div>
+                            <div class="card-body px-0 pb-0">
+                                <div class="mb-0">
+                                    <h2 class="ms-1" style="color: #0a77a9;">GIÁ BAO GỒM:</h2>
+                                    <ul>
+                                        <li>Xe ô tô 16/29 du lịch đời mới đưa đón suốt hành trình.</li>
+                                        <li>HDV kinh nghiệm, nhiệt tình suốt hành trình.</li>
+                                        <li>Khách sạn/ Homestay sạch sẽ tiện nghi, phòng riêng.</li>
+                                        <li>Vé tham quan phố cổ Hội An.</li>
+                                        <li>Vé tham quan, ngồi thuyền thúng tại rừng dừa Bảy Mẫu.</li>
+                                        <li>Vé tham quan 2 làng nghề truyền thống.</li>
+                                        <li>Ăn uống theo chương trình 3 Bữa chính 180.000đ/người + 1 bữa sáng. </li>
+                                        <li>Bảo hiểm du lịch suốt tuyến, mức cao nhất 60.000.000đ/ người/ vụ.</li>
+                                        <li>Nước uống 01 chai/người/ngày.</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-0">
+                                    <h2 class="ms-1" style="color: #0a77a9;">KHÔNG BAO GỒM:</h2>
+                                    <ul>
+                                        <li>Chi phí cá nhân.</li>
+                                        <li>Tiền tip lái xe, HDV </li>
+                                        <li>VAT</li>
+                                        <li>Vé xem Ký ức Hội An</li>
+                                    </ul>
+                                </div>
+                                <div class="mb-0">
+                                    <h2 class="ms-1" style="color: #0a77a9;">PHỤ THU TRẺ EM:</h2>
+                                    <ul>
+                                        <li>Trẻ em từ 11 tuổi trở lên: tính 100% giá trị tour.</li>
+                                        <li>Trẻ em từ 06 – 10 tuổi: tính 75% giá trị tour – Ngủ chung giường với bố
+                                            mẹ.</li>
+                                        <li>Trẻ em dưới 06 tuổi: miễn phí (Ăn ngủ cùng bố mẹ, ngồi lòng bố hoặc mẹ),
+                                            2 người lớn miễn phí 1 trẻ em, trẻ thứ 2 tính 50% giá trị tour.</li>
+                                        Như vậy, trên đây là những thông tin cơ bản về tour Hội An 2 ngày 1 đêm cùng
+                                        PT Travel. Nếu bạn muốn đặt tour hãy liên hệ ngay đến chúng tôi để được tư
+                                        vấn chi tiết nhé!
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card shadow mb-3">
+                            <a class="btn btn-primary" ng-click="addSP(sp)">Đặt Ngay</a>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header border-bottom">
+                                <h5 class="mb-0">Ưu Đãi</h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="card card-body border mb-4">
+                                    <div class="d-sm-flex justify-content-between mb-2">
+                                        <div class="mb-2 mb-sm-0">
+                                            <div class="badge text-bg-dark"><i class="bi bi-cake2"></i> Buffet</div>
+                                            <div class="badge text-bg-success"><i class="bi bi-postcard-heart-fill"></i>
+                                                SPA
+                                            </div>
+                                        </div>
+                                        <span class="text-success">Hủy miễn phí</span>
+                                    </div>
+                                    <h5 class="card-title mb-2"><a href="#">Mừng Tết Nguyên Đán đặt tours ngay nhận
+                                            buffet sáng & dịch vụ Spa miễn phí</a></h5>
+                                    <div class="d-flex align-items-center flex-wrap">
+                                        <span class="me-2">Có hiệu lực cho:</span>
+                                        <ul class="nav nav-divider h6 fw-light mb-0">
+                                            <li class="nav-item"><i class="bi bi-person me-1"></i>Từ 4 người trở lên
+                                            </li>
+                                            <li class="nav-item ms-3"><i class="bi bi-clock me-1"></i>Thứ 7 - Chủ
+                                                Nhật</li>
+                                        </ul>
+                                    </div>
+                                    <div class="d-sm-flex justify-content-between mt-4">
+                                        <div class="hstack gap-1">
+                                            <h5 class="mb-0">$1500</h5>
+                                            <span class="text-decoration-line-through">$1800</span>
+                                        </div>
+                                        <div class="mt-2 mt-sm-0">
+                                            <a href="#" class="btn btn-primary-soft">Đặt Ngay</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="tab-3">
+                <div class="card">
+                    <div class="card-body p-4">
+                        <h4 class="mb-0">Những ý kiến ​​gần đây</h4>
+                        <p class="fw-light mb-4 pb-2">Phần bình luận mới nhất của người dùng</p>
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="img/kh1.jpeg" alt="avatar" width="60"
+                                height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                                <div class="d-flex align-items-center mb-3">
+                                    <p class="mb-0">1/16/2024</p>
+                                    <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                    text ever
+                                    since the 1500s, when an unknown printer took a galley of type
+                                    and
+                                    scrambled it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-0" />
+
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="img/kh2.jpeg" alt="avatar" width="60"
+                                height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                                <div class="d-flex align-items-center mb-3">
+                                    <p class="mb-0">1/16/2024</p>
+                                    <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                    text ever
+                                    since the 1500s, when an unknown printer took a galley of type
+                                    and
+                                    scrambled it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-0" style="height: 1px;" />
+
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="img/kh3.jpeg" alt="avatar" width="60"
+                                height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                                <div class="d-flex align-items-center mb-3">
+                                    <p class="mb-0">1/16/2024</p>
+                                    <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                    text ever
+                                    since the 1500s, when an unknown printer took a galley of type
+                                    and
+                                    scrambled it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="my-0" />
+
+                    <div class="card-body p-4">
+                        <div class="d-flex flex-start">
+                            <img class="rounded-circle shadow-1-strong me-3" src="img/FT-1.jpg" alt="avatar" width="60"
+                                height="60" />
+                            <div>
+                                <h6 class="fw-bold mb-1">Kiều Kiến Quốc</h6>
+                                <div class="d-flex align-items-center mb-3">
+                                    <p class="mb-0">1/16/2024</p>
+                                    <a href="#!" class="link-muted"><i class="bi bi-pen"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-arrow-clockwise"></i></a>
+                                    <a href="#!" class="link-muted"><i class="bi bi-heart"></i></a>
+                                </div>
+                                <p class="mb-0">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting
+                                    industry. Lorem Ipsum has been the industry's standard dummy
+                                    text ever
+                                    since the 1500s, when an unknown printer took a galley of type
+                                    and
+                                    scrambled it.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-floating mt-3 d-flex align-content-center" style="width: 1075px; margin-left: 110px;">
+                    <img src="img/FT-1.jpg" alt="" width="80px" class="rounded-circle">
+                    <textarea class="form-control ms-3 mt-2" id="floatingTextarea"></textarea>
+                </div>
+                <div class="text-end" style="margin-right: 110px;">
+                    <button type="button" class="btn btn-primary">Đăng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
